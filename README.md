@@ -8,10 +8,10 @@ ntp: Ntp
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.ntp](https://galaxy.ansible.com/devops-toolbox.ntp)
+[https://galaxy.ansible.com/devopstoolbox.ntp](https://galaxy.ansible.com/devopstoolbox.ntp)
 
 ```bash
-ansible-galaxy install devops-toolbox.ntp
+ansible-galaxy install devopstoolbox.ntp
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: ntp is configured
       import_role:
-        name: devops-toolbox.ntp
+        name: devopstoolbox.ntp
       vars:
         ntp_packages_state: present
         ntp_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
