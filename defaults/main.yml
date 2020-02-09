@@ -1,0 +1,19 @@
+---
+# defaults file for ntp
+
+ntp_packages_state: present
+ntp_remove_packages: true
+ntp_enable_service: true
+ntp_enable_selinux: true
+ntp_copy_templates: true
+ntp_firewall_configure: true
+ntp_firewall_rules:
+  - service: ssh
+  - port: 3389
+ntp_users:
+  - user: devops
+    group: docker
+ntp_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

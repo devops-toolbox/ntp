@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+ntp_repos_create: "{{ _ntp_repos_create['all']
+  | union ( _ntp_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+ntp_repos_download: "{{ _ntp_repos_download['all']
+  | union ( _ntp_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+ntp_templates_copy: "{{ _ntp_templates_copy['all']
+  | union ( _ntp_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+ntp_services_enable: "{{ _ntp_services_enable['all']
+  | union ( _ntp_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+ntp_selinux_enable: "{{ _ntp_selinux_enable['all']
+  | union ( _ntp_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+ntp_packages_remove: "{{ _ntp_packages_remove['all']
+  | union ( _ntp_packages_remove[my_os]
+  | default([]) ) }}"
+ntp_packages_repos: "{{ _ntp_packages_repos['all']
+  | union ( _ntp_packages_repos[my_os]
+  | default([]) ) }}"
+ntp_packages_prereq: "{{ _ntp_packages_prereq['all']
+  | union ( _ntp_packages_prereq[my_os]
+  | default([]) ) }}"
+ntp_packages_install: "{{ _ntp_packages_install['all']
+  | union ( _ntp_packages_install[my_os]
+  | default([]) ) }}"

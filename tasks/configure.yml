@@ -1,0 +1,11 @@
+---
+# Configure ntp
+
+- name: service is enabled and started
+  service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  become: true
+  loop: "{{ ntp_services_enable }}"
+  when: ntp_enable_service
